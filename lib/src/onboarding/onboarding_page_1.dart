@@ -16,10 +16,13 @@ class OnboardingPage1 extends StatelessWidget {
       children: [
         Image.asset('assets/images/onboarding/onboarding_1.png'),
         const Spacer(),
-        Text(
-          onboardingSlogan1,
-          style: Theme.of(context).textTheme.displayMedium,
-          textAlign: TextAlign.center,
+        Padding(
+          padding: const EdgeInsets.all(contentPadding),
+          child: Text(
+            onboardingSlogan1,
+            style: Theme.of(context).textTheme.displaySmall,
+            textAlign: TextAlign.center,
+          ),
         ),
         const Spacer(),
         const OnboardingActions(),

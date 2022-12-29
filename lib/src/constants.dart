@@ -1,3 +1,4 @@
 const onboardingSlogan1 = 'Find & visit nearby restaurants easily';
 const onboardingSlogan2 = 'Manage your favorite list of restaurants';
 const onboardingSlogan3 = 'Getting started now! ';
+const contentPadding = 8.0;

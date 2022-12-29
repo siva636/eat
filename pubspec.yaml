@@ -24,3 +24,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/onboarding/
+  fonts:
+    - family: ultra
+      fonts:
+        - asset: assets/fonts/Ultra-Regular.ttf

@@ -6,8 +6,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Onboarding(),
+    return MaterialApp(
+      theme: ThemeData(
+        colorSchemeSeed: Colors.red,
+        fontFamily: 'ultra',
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            shape: const StadiumBorder(),
+          ),
+        ),
+      ),
+      home: const Onboarding(),
     );
   }
 }
