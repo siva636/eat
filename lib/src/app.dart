@@ -1,4 +1,5 @@
 import 'package:eat/src/onboarding/onboarding.dart';
+import 'package:eat/src/onboarding/splash.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const Onboarding(),
+      home: const Splash(),
     );
   }
 }
