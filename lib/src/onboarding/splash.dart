@@ -31,8 +31,24 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
     if (!mounted) return;
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (context) => const Onboarding(),
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            const Onboarding(),
+        transitionDuration: const Duration(seconds: 2),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const double begin = 0;
+          const double end = 1;
+          const curve = Curves.ease;
+
+          var tween = Tween<double>(begin: begin, end: end).chain(
+            CurveTween(curve: curve),
+          );
+
+          return FadeTransition(
+            opacity: animation.drive(tween),
+            child: child,
+          );
+        },
       ),
     );
   }
