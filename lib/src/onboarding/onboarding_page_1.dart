@@ -10,24 +10,34 @@ class OnboardingPage1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Image.asset('assets/images/onboarding/onboarding_1.png'),
-          const Spacer(),
-          Padding(
-            padding: const EdgeInsets.all(contentPadding),
-            child: Text(
-              onboardingSlogan1,
-              style: Theme.of(context).textTheme.displaySmall,
-              textAlign: TextAlign.center,
+    return Scaffold(
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints viewportConstraints) {
+          return SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: viewportConstraints.maxHeight,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset('assets/images/onboarding/onboarding_1.png'),
+                  Padding(
+                    padding: const EdgeInsets.all(contentPadding),
+                    child: Text(
+                      onboardingSlogan1,
+                      style: Theme.of(context).textTheme.displaySmall,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const OnboardingActions(),
+                  PageIndicator(currentPage),
+                ],
+              ),
             ),
-          ),
-          const Spacer(),
-          const OnboardingActions(),
-          PageIndicator(currentPage),
-        ],
+          );
+        },
       ),
     );
   }

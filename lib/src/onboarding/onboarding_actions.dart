@@ -1,3 +1,4 @@
+import 'package:eat/src/constants.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingActions extends StatelessWidget {
@@ -12,6 +13,7 @@ class OnboardingActions extends StatelessWidget {
           onPressed: () {},
           child: const Text('Search'),
         ),
+        const SizedBox(height: contentPadding),
         ElevatedButton(
           style: ElevatedButton.styleFrom(fixedSize: const Size(200, 40)),
           onPressed: () {},

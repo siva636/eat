@@ -1,3 +1,4 @@
+import 'package:eat/src/constants.dart';
 import 'package:flutter/material.dart';
 
 class PageIndicator extends StatelessWidget {
@@ -25,9 +26,12 @@ class PageIndicator extends StatelessWidget {
         ),
       );
     }
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: indicators,
+    return Padding(
+      padding: const EdgeInsets.all(contentPadding),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: indicators,
+      ),
     );
   }
 }
