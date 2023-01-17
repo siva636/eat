@@ -1,5 +1,8 @@
+import 'package:eat/src/account/account.dart';
 import 'package:eat/src/constants.dart';
+import 'package:eat/src/search/Search.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class OnboardingActions extends StatelessWidget {
   const OnboardingActions({super.key});
@@ -10,14 +13,14 @@ class OnboardingActions extends StatelessWidget {
       children: [
         ElevatedButton(
           style: ElevatedButton.styleFrom(fixedSize: const Size(200, 40)),
-          onPressed: () {},
+          onPressed: () => context.go(Search.path),
           child: const Text('Search'),
         ),
         const SizedBox(height: contentPadding),
         ElevatedButton(
           style: ElevatedButton.styleFrom(fixedSize: const Size(200, 40)),
-          onPressed: () {},
-          child: const Text('Sign in / Sign up'),
+          onPressed: () => context.go(Account.path),
+          child: const Text('Account'),
         ),
       ],
     );
