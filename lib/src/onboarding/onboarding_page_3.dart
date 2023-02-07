@@ -1,11 +1,9 @@
 import 'package:eat/src/constants.dart';
 import 'package:eat/src/onboarding/onboarding_actions.dart';
-import 'package:eat/src/onboarding/page_indicator.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage3 extends StatelessWidget {
-  const OnboardingPage3(this.currentPage, {super.key});
-  final int currentPage;
+  const OnboardingPage3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +29,6 @@ class OnboardingPage3 extends StatelessWidget {
                     ),
                   ),
                   const OnboardingActions(),
-                  PageIndicator(currentPage),
                 ],
               ),
             ),

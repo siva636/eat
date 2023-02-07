@@ -21,7 +21,9 @@ class PageIndicator extends StatelessWidget {
           height: 8,
           decoration: ShapeDecoration(
             shape: const StadiumBorder(),
-            color: currentPage == i ? Colors.red : Colors.red.shade100,
+            color: currentPage == i
+                ? Theme.of(context).primaryColor
+                : Theme.of(context).disabledColor,
           ),
         ),
       );

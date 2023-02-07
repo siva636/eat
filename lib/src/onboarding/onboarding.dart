@@ -1,6 +1,7 @@
 import 'package:eat/src/onboarding/onboarding_page_1.dart';
 import 'package:eat/src/onboarding/onboarding_page_2.dart';
 import 'package:eat/src/onboarding/onboarding_page_3.dart';
+import 'package:eat/src/onboarding/page_indicator.dart';
 import 'package:flutter/material.dart';
 
 class Onboarding extends StatefulWidget {
@@ -25,9 +26,9 @@ class _OnboardingState extends State<Onboarding> {
   @override
   Widget build(BuildContext context) {
     onboardingPages = [
-      OnboardingPage1(currentPage),
-      OnboardingPage2(currentPage),
-      OnboardingPage3(currentPage),
+      const OnboardingPage1(),
+      const OnboardingPage2(),
+      const OnboardingPage3(),
     ];
     return Scaffold(
       body: SafeArea(
@@ -41,6 +42,7 @@ class _OnboardingState extends State<Onboarding> {
           ),
         ),
       ),
+      persistentFooterButtons: [PageIndicator(currentPage)],
     );
   }
 }
