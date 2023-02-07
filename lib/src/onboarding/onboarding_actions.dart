@@ -11,14 +11,18 @@ class OnboardingActions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(fixedSize: const Size(200, 40)),
+        FilledButton(
+          style: FilledButton.styleFrom(
+            fixedSize: const Size(200, 50),
+          ),
           onPressed: () => context.go(Search.path),
           child: const Text('Search'),
         ),
         const SizedBox(height: contentPadding),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(fixedSize: const Size(200, 40)),
+        FilledButton(
+          style: FilledButton.styleFrom(
+            fixedSize: const Size(200, 50),
+          ),
           onPressed: () => context.go(Account.path),
           child: const Text('Account'),
         ),

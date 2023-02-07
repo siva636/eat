@@ -20,13 +20,9 @@ class MyApp extends StatelessWidget {
       routerConfig: _router,
       scrollBehavior: MyCustomScrollBehavior(),
       theme: ThemeData(
+        useMaterial3: true,
         colorSchemeSeed: Colors.red,
         fontFamily: 'ultra',
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            shape: const StadiumBorder(),
-          ),
-        ),
       ),
     );
   }
