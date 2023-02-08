@@ -1,5 +1,4 @@
 import 'package:eat/src/constants.dart';
-import 'package:eat/src/onboarding/onboarding_actions.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage1 extends StatelessWidget {
@@ -24,17 +23,19 @@ class OnboardingPage1 extends StatelessWidget {
                     padding: const EdgeInsets.all(contentPadding),
                     child: Text(
                       onboardingSlogan1,
-                      style: Theme.of(context).textTheme.displaySmall,
+                      style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                          color:
+                              Theme.of(context).colorScheme.onPrimaryContainer),
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  const OnboardingActions(),
                 ],
               ),
             ),
           );
         },
       ),
+      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
     );
   }
 }

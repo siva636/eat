@@ -69,10 +69,8 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
         scale: _animation,
         child: Text(
           'eat',
-          style: Theme.of(context)
-              .textTheme
-              .displayLarge
-              ?.copyWith(color: Theme.of(context).primaryColor),
+          style: Theme.of(context).textTheme.displayLarge?.copyWith(
+              color: Theme.of(context).colorScheme.onPrimaryContainer),
         ),
       )),
     );

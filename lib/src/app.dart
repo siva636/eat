@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       routerConfig: _router,
       scrollBehavior: MyCustomScrollBehavior(),
       theme: ThemeData(
+        // brightness: Brightness.dark,
         useMaterial3: true,
         colorSchemeSeed: Colors.red,
         fontFamily: 'ultra',

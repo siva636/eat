@@ -22,18 +22,15 @@ class PageIndicator extends StatelessWidget {
           decoration: ShapeDecoration(
             shape: const StadiumBorder(),
             color: currentPage == i
-                ? Theme.of(context).primaryColor
+                ? Theme.of(context).colorScheme.onPrimaryContainer
                 : Theme.of(context).disabledColor,
           ),
         ),
       );
     }
-    return Padding(
-      padding: const EdgeInsets.all(contentPadding),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: indicators,
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: indicators,
     );
   }
 }

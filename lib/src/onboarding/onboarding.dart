@@ -1,3 +1,4 @@
+import 'package:eat/src/onboarding/onboarding_actions.dart';
 import 'package:eat/src/onboarding/onboarding_page_1.dart';
 import 'package:eat/src/onboarding/onboarding_page_2.dart';
 import 'package:eat/src/onboarding/onboarding_page_3.dart';
@@ -31,18 +32,28 @@ class _OnboardingState extends State<Onboarding> {
       const OnboardingPage3(),
     ];
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: PageView(
-            onPageChanged: (value) => setState(() {
-              currentPage = value + 1;
-            }),
-            controller: pageController,
-            children: onboardingPages,
+        body: SafeArea(
+          child: Center(
+            child: PageView(
+              onPageChanged: (value) => setState(() {
+                currentPage = value + 1;
+              }),
+              controller: pageController,
+              children: onboardingPages,
+            ),
           ),
         ),
-      ),
-      persistentFooterButtons: [PageIndicator(currentPage)],
-    );
+        persistentFooterButtons: [
+          ColoredBox(
+            color: Theme.of(context).colorScheme.primaryContainer,
+            child: Column(
+              children: [
+                const OnboardingActions(),
+                PageIndicator(currentPage),
+              ],
+            ),
+          ),
+        ],
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer);
   }
 }

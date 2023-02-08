@@ -11,6 +11,7 @@ class OnboardingActions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(height: contentPadding),
         FilledButton(
           style: FilledButton.styleFrom(
             fixedSize: const Size(200, 50),
@@ -26,6 +27,7 @@ class OnboardingActions extends StatelessWidget {
           onPressed: () => context.go(Account.path),
           child: const Text('Account'),
         ),
+        const SizedBox(height: contentPadding),
       ],
     );
   }
