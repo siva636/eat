@@ -63,6 +63,7 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       body: Center(
           child: ScaleTransition(
         scale: _animation,
@@ -71,7 +72,7 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
           style: Theme.of(context)
               .textTheme
               .displayLarge
-              ?.copyWith(color: Colors.red),
+              ?.copyWith(color: Theme.of(context).primaryColor),
         ),
       )),
     );
