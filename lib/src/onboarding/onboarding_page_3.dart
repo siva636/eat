@@ -29,6 +29,7 @@ class OnboardingPage3 extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
+                  const SizedBox.shrink(),
                 ],
               ),
             ),
