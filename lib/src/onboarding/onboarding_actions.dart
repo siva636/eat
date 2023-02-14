@@ -1,5 +1,5 @@
 import 'package:eat/src/account/account.dart';
-import 'package:eat/src/constants.dart';
+import 'package:eat/src/utils/constants/constants.dart';
 import 'package:eat/src/search/Search.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

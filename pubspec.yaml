@@ -10,6 +10,7 @@ environment:
   sdk: '>=2.18.2 <3.0.0'
 
 dependencies:
+  adaptive_breakpoints: ^0.1.6
   firebase_auth: ^4.2.5
   firebase_core: ^2.4.1
   flutter:

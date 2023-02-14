@@ -1,7 +1,9 @@
 import 'package:eat/src/account/account.dart';
+import 'package:eat/src/auth/auth_by_phone.dart';
 import 'package:eat/src/onboarding/splash.dart';
 import 'package:eat/src/search/Search.dart';
 import 'package:eat/src/shell.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -53,7 +55,20 @@ final GoRouter _router = GoRouter(
           },
         ),
         GoRoute(
+          path: AuthByPhone.path,
+          builder: (BuildContext context, GoRouterState state) {
+            return const AuthByPhone();
+          },
+        ),
+        GoRoute(
           path: Account.path,
+          redirect: (BuildContext context, GoRouterState state) {
+            if (FirebaseAuth.instance.currentUser == null) {
+              return AuthByPhone.path;
+            } else {
+              return null;
+            }
+          },
           builder: (BuildContext context, GoRouterState state) {
             return const Account();
           },

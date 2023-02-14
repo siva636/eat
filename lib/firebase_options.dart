@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -49,21 +52,11 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyC2wnEOoIee_VFDO0KQILFjISBSTL2c5k0',
-    appId: '1:93407217218:web:00c7436d1745fa038c0fdb',
-    messagingSenderId: '93407217218',
-    projectId: 'portfolio636',
-    authDomain: 'portfolio636.firebaseapp.com',
-    storageBucket: 'portfolio636.appspot.com',
-    measurementId: 'G-3CHY6BYK0C',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB4OsDcIFJqAM-8c3FwXIxasfGhtiCXliA',
-    appId: '1:93407217218:android:c84a3a4213ab15908c0fdb',
-    messagingSenderId: '93407217218',
-    projectId: 'portfolio636',
-    storageBucket: 'portfolio636.appspot.com',
+    apiKey: 'AIzaSyBCxmWrsUp-HfQ_o8SUmhWRifLUoats44I',
+    appId: '1:376225930229:android:204673abc368dd0c5f1ebc',
+    messagingSenderId: '376225930229',
+    projectId: 'pexels-view',
+    storageBucket: 'pexels-view.appspot.com',
   );
 }

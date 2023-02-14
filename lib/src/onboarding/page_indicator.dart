@@ -1,4 +1,4 @@
-import 'package:eat/src/constants.dart';
+import 'package:eat/src/utils/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class PageIndicator extends StatelessWidget {
