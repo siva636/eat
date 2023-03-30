@@ -1,0 +1,1 @@
+enum LocationData { latitude, longitude }

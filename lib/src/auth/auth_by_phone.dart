@@ -2,6 +2,7 @@ import 'package:adaptive_breakpoints/adaptive_breakpoints.dart';
 import 'package:eat/src/account/account.dart';
 import 'package:eat/src/auth/sms_code_input.dart';
 import 'package:eat/src/onboarding/splash.dart';
+import 'package:eat/src/sign_up/sign_up.dart';
 import 'package:eat/src/utils/constants/constants.dart';
 import 'package:eat/src/utils/enums/view_state.dart';
 import 'package:eat/src/utils/widgets/progress_indicator_for_button.dart';
@@ -67,6 +68,7 @@ class _AuthByPhoneState extends State<AuthByPhone> {
                     if (!value.startsWith('+')) {
                       return 'Enter a correct value, ex: +16505551234';
                     }
+                    return null;
                   },
                 ),
                 const SizedBox(height: verticalGap),
@@ -176,6 +178,13 @@ class _AuthByPhoneState extends State<AuthByPhone> {
                         )
                       : const Text('Continue'),
                 ),
+                const Divider(),
+                TextButton(
+                  onPressed: () {
+                    context.go(SignUpPage.path);
+                  },
+                  child: const Text('Sign up'),
+                )
               ],
             ),
           ),

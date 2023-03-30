@@ -10,12 +10,19 @@ environment:
   sdk: '>=2.18.2 <3.0.0'
 
 dependencies:
-  adaptive_breakpoints: ^0.1.6
-  firebase_auth: ^4.2.5
-  firebase_core: ^2.4.1
   flutter:
     sdk: flutter
   go_router: ^6.0.1
+  adaptive_breakpoints: ^0.1.6
+  firebase_auth: ^4.2.5
+  firebase_core: ^2.4.1
+  bloc: ^8.1.1
+  flutter_bloc: ^8.1.2
+  equatable: ^2.0.5
+  formz: ^0.5.0+1
+  geolocator: ^9.0.2
+  meta: 1.8.0
+  cloud_firestore: ^4.4.5
 
 dev_dependencies:
   flutter_test:

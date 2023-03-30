@@ -3,6 +3,7 @@ import 'package:eat/src/auth/auth_by_phone.dart';
 import 'package:eat/src/onboarding/splash.dart';
 import 'package:eat/src/search/Search.dart';
 import 'package:eat/src/shell.dart';
+import 'package:eat/src/sign_up/sign_up.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -48,6 +49,12 @@ final GoRouter _router = GoRouter(
         return ScaffoldWithNavBar(child: child);
       },
       routes: <RouteBase>[
+        GoRoute(
+          path: SignUpPage.path,
+          builder: (BuildContext context, GoRouterState state) {
+            return const SignUpPage();
+          },
+        ),
         GoRoute(
           path: Search.path,
           builder: (BuildContext context, GoRouterState state) {

@@ -14,7 +14,59 @@
       },
       "oauth_client": [
         {
-          "client_id": "376225930229-86sf52idkq4bdmc4cslaqo5plvep48g6.apps.googleusercontent.com",
+          "client_id": "376225930229-30avdvkkea7g1l7e3j22924ps7cdt5bg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "link.gamecafe.eat",
+            "certificate_hash": "4b58f17878a452f3006e9a68fc5d9f9284477882"
+          }
+        },
+        {
+          "client_id": "376225930229-sdd7inbbkg2b46fnuhimkc3isa4v1kt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCxmWrsUp-HfQ_o8SUmhWRifLUoats44I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376225930229-86sf52idkq4bdmc4cslaqo5plvep48g6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "376225930229-npiarmbhvlqectgajhgqgsj989qvodts.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "link.gamecafe.eat"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376225930229:android:b603ef0300111e645f1ebc",
+        "android_client_info": {
+          "package_name": "link.gamecafe.iap_code_lab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376225930229-n96jbg4l3pgd9bf4tm3f57j743ljetjq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "link.gamecafe.iap_code_lab",
+            "certificate_hash": "4b58f17878a452f3006e9a68fc5d9f9284477882"
+          }
+        },
+        {
+          "client_id": "376225930229-sdd7inbbkg2b46fnuhimkc3isa4v1kt5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],

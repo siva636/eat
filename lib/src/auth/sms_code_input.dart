@@ -47,6 +47,7 @@ class _SmsCodeInputState extends State<SmsCodeInput> {
                     if (value == null || value.isEmpty) {
                       return 'Enter a value';
                     }
+                    return null;
                   },
                 ),
                 const SizedBox(height: verticalGap),

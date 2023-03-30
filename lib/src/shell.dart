@@ -1,6 +1,8 @@
 import 'package:eat/src/account/account.dart';
+import 'package:eat/src/auth/auth_by_phone.dart';
 import 'package:eat/src/onboarding/splash.dart';
 import 'package:eat/src/search/Search.dart';
+import 'package:eat/src/sign_up/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -45,7 +47,9 @@ class ScaffoldWithNavBar extends StatelessWidget {
     if (location.startsWith(Search.path)) {
       return 1;
     }
-    if (location.startsWith(Account.path)) {
+    if (location.startsWith(Account.path) ||
+        location.startsWith(AuthByPhone.path) ||
+        location.startsWith(SignUpPage.path)) {
       return 2;
     }
     return 0;
