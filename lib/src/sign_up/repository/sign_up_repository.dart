@@ -5,7 +5,7 @@ import 'package:eat/src/utils/enums/location_data.dart';
 class SignUpRepository {
   final db = FirebaseFirestore.instance;
 
-  signUp(Profile profile) async {
+  signUp({required String uid, required Profile profile}) async {
     final data = {
       'mobileNumber': profile.mobileNumberInput.value,
       'diet': profile.dietInput.value,
@@ -14,7 +14,6 @@ class SignUpRepository {
         'longitude': profile.location.location?[LocationData.longitude],
       },
     };
-    DocumentReference doc = await db.collection("eat").add(data);
-    return doc.id;
+    await db.collection("eat").doc(uid).set(data);
   }
 }

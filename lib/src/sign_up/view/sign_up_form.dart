@@ -2,6 +2,7 @@ import 'package:eat/src/sign_up/sign_up.dart';
 import 'package:eat/src/utils/constants/constants.dart';
 import 'package:eat/src/utils/enums/diet.dart';
 import 'package:eat/src/utils/enums/location_data.dart';
+import 'package:eat/src/utils/enums/view_status.dart';
 import 'package:eat/src/utils/models/my_location.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -48,15 +49,6 @@ class _SignUpFormState extends State<SignUpForm> {
         if (state.location.isUnknown) {
           return const Center(child: CircularProgressIndicator());
         }
-        if (state.signUpInProgress) {
-          return const Center(child: CircularProgressIndicator());
-        }
-        if (state.signUpCompleted) {
-          return const Center(child: Text('Sign up completed'));
-        }
-        if (state.signUpFailed) {
-          return const Center(child: Text('Sign up failed'));
-        }
         if (state.location.isDenied) {
           return Center(
             child: Text(
@@ -64,6 +56,58 @@ class _SignUpFormState extends State<SignUpForm> {
               textAlign: TextAlign.center,
             ),
           );
+        }
+
+        if (state.smsCodeUi) {
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Sms code',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const SizedBox(height: verticalGap),
+                TextFormField(
+                  onChanged: (String value) {
+                    if (value.isNotEmpty) {
+                      context.read<SignUpBloc>().add(SmsCodeChanged(value));
+                    }
+                  },
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                    labelText: 'Sms code',
+                    errorText: state.smsCodeInput.isNotValid
+                        ? state.smsCodeInput.displayError?.message
+                        : null,
+                  ),
+                ),
+                const SizedBox(height: verticalGap),
+                FilledButton(
+                  onPressed: () {
+                    if (Formz.validate([
+                      state.smsCodeInput,
+                    ])) {
+                      context
+                          .read<SignUpBloc>()
+                          .add(SmsCodeReceived(state.smsCodeInput.value));
+                    }
+                  },
+                  child: const Text('Continue'),
+                ),
+              ],
+            ),
+          );
+        }
+
+        if (state.viewStatus == ViewStatus.inProgress) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        if (state.viewStatus == ViewStatus.success) {
+          return const Center(child: Text('Sign up completed'));
+        }
+        if (state.viewStatus == ViewStatus.failure) {
+          return const Center(child: Text('Sign up failed'));
         }
 
         return Center(
@@ -143,7 +187,7 @@ class _SignUpFormState extends State<SignUpForm> {
                     return context.read<SignUpBloc>().add(SignUpFormInvalid());
                   }
 
-                  context.read<SignUpBloc>().add(SignUpFormSubmitted(
+                  context.read<SignUpBloc>().add(SignUpInitiated(
                         mobileNumberInput: state.mobileNumberInput,
                         dietInput: state.dietInput,
                         location: state.location,

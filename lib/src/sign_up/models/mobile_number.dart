@@ -1,7 +1,7 @@
 import 'package:formz/formz.dart';
 
 enum MobileNumberInputError {
-  empty('A value is required'),
+  empty('Value is required'),
   invalid('Enter a valid value');
 
   const MobileNumberInputError(this.message);

@@ -3,56 +3,54 @@ part of 'sign_up_bloc.dart';
 @immutable
 class SignUpState {
   const SignUpState({
-    required this.viewState,
+    required this.viewStatus,
     required this.mobileNumberInput,
     required this.dietInput,
     required this.saveLocationPreference,
     required this.location,
-    required this.signUpCompleted,
-    required this.signUpFailed,
-    required this.signUpInProgress,
+    required this.smsCodeInput,
+    required this.smsCodeUi,
   });
   const SignUpState.initial()
       : this(
-          viewState: ViewState.idle,
+          viewStatus: ViewStatus.initial,
           mobileNumberInput: const MobileNumberInput.pure(),
           dietInput: const DietInput.pure(),
           saveLocationPreference: true,
           location: const MyLocation.unknown(),
-          signUpCompleted: false,
-          signUpFailed: false,
-          signUpInProgress: false,
+          smsCodeInput: const SmsCodeInput.pure(),
+          smsCodeUi: false,
         );
 
-  final ViewState viewState;
+  // system status
+  final ViewStatus viewStatus;
+  // user input related
   final MobileNumberInput mobileNumberInput;
   final DietInput dietInput;
   final bool saveLocationPreference;
   final MyLocation location;
-  final bool signUpCompleted;
-  final bool signUpInProgress;
-  final bool signUpFailed;
+  // sms code related
+  final SmsCodeInput smsCodeInput;
+  final bool smsCodeUi;
 
   SignUpState copyWith({
-    ViewState? viewState,
+    ViewStatus? viewStatus,
     MobileNumberInput? mobileNumberInput,
     DietInput? dietInput,
     bool? saveLocationPreference,
     MyLocation? location,
-    bool? signUpCompleted,
-    bool? signUpInProgress,
-    bool? signUpFailed,
+    SmsCodeInput? smsCodeInput,
+    bool? smsCodeUi,
   }) {
     return SignUpState(
-      viewState: viewState ?? this.viewState,
+      viewStatus: viewStatus ?? this.viewStatus,
       mobileNumberInput: mobileNumberInput ?? this.mobileNumberInput,
       dietInput: dietInput ?? this.dietInput,
       saveLocationPreference:
           saveLocationPreference ?? this.saveLocationPreference,
       location: location ?? this.location,
-      signUpCompleted: signUpCompleted ?? this.signUpCompleted,
-      signUpInProgress: signUpInProgress ?? this.signUpInProgress,
-      signUpFailed: signUpFailed ?? this.signUpFailed,
+      smsCodeInput: smsCodeInput ?? this.smsCodeInput,
+      smsCodeUi: smsCodeUi ?? this.smsCodeUi,
     );
   }
 }

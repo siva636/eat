@@ -18,6 +18,11 @@ class DietChanged extends SignUpEvent {
   final String diet;
 }
 
+class SmsCodeChanged extends SignUpEvent {
+  SmsCodeChanged(this.smsCode);
+  final String smsCode;
+}
+
 class SaveLocationPreferenceChanged extends SignUpEvent {
   SaveLocationPreferenceChanged(this.save);
   final bool save;
@@ -25,13 +30,32 @@ class SaveLocationPreferenceChanged extends SignUpEvent {
 
 class SignUpFormInvalid extends SignUpEvent {}
 
-class SignUpFormSubmitted extends SignUpEvent {
-  SignUpFormSubmitted({
+class SmsCodeReceived extends SignUpEvent {
+  SmsCodeReceived(this.smsCode);
+  final String smsCode;
+}
+
+class SignUpInitiated extends SignUpEvent {
+  SignUpInitiated({
     required this.mobileNumberInput,
     required this.dietInput,
     required this.location,
   });
 
+  final MobileNumberInput mobileNumberInput;
+  final DietInput dietInput;
+  final MyLocation location;
+}
+
+class PersistUserRequested extends SignUpEvent {
+  PersistUserRequested({
+    required this.uid,
+    required this.mobileNumberInput,
+    required this.dietInput,
+    required this.location,
+  });
+
+  final String uid;
   final MobileNumberInput mobileNumberInput;
   final DietInput dietInput;
   final MyLocation location;
