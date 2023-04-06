@@ -1,12 +1,14 @@
 import 'package:eat/src/account/account.dart';
+import 'package:eat/src/auth/bloc/auth_bloc.dart';
 import 'package:eat/src/onboarding/splash.dart';
 import 'package:eat/src/search/Search.dart';
 import 'package:eat/src/shell.dart';
 import 'package:eat/src/sign_in/sign_in.dart';
 import 'package:eat/src/sign_up/sign_up.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:eat/src/utils/enums/authentication_status.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
@@ -70,7 +72,8 @@ final GoRouter _router = GoRouter(
         GoRoute(
           path: Account.path,
           redirect: (BuildContext context, GoRouterState state) {
-            if (FirebaseAuth.instance.currentUser == null) {
+            if (context.read<AuthBloc>().state.authenticationStatus !=
+                AuthenticationStatus.authenticated) {
               return SignInPage.path;
             } else {
               return null;
