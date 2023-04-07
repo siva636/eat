@@ -1,9 +1,11 @@
 import 'package:eat/src/sign_in/sign_in.dart';
+import 'package:eat/src/sign_up/view/sign_up_page.dart';
 import 'package:eat/src/utils/constants/constants.dart';
 import 'package:eat/src/utils/enums/view_status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
+import 'package:go_router/go_router.dart';
 
 class SignInForm extends StatefulWidget {
   const SignInForm({super.key});
@@ -110,6 +112,13 @@ class _SignInFormState extends State<SignInForm> {
                 },
                 child: const Text('Sign in'),
               ),
+              const SizedBox(height: verticalGap),
+              const Divider(),
+              OutlinedButton(
+                  onPressed: () {
+                    context.go(SignUpPage.path);
+                  },
+                  child: const Text('Sign up'))
             ],
           ),
         );
