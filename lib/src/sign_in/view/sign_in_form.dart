@@ -113,12 +113,15 @@ class _SignInFormState extends State<SignInForm> {
                 child: const Text('Sign in'),
               ),
               const SizedBox(height: verticalGap),
-              const Divider(),
-              OutlinedButton(
-                  onPressed: () {
-                    context.go(SignUpPage.path);
-                  },
-                  child: const Text('Sign up'))
+              Divider(color: Theme.of(context).primaryColor),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                      onPressed: () => context.go(SignUpPage.path),
+                      child: const Text('Sign up')),
+                ],
+              ),
             ],
           ),
         );

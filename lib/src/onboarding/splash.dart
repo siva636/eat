@@ -1,4 +1,5 @@
 import 'package:eat/src/onboarding/onboarding.dart';
+import 'package:eat/src/utils/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -68,7 +69,7 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
           child: ScaleTransition(
         scale: _animation,
         child: Text(
-          'eat',
+          brand,
           style: Theme.of(context).textTheme.displayLarge?.copyWith(
               color: Theme.of(context).colorScheme.onPrimaryContainer),
         ),

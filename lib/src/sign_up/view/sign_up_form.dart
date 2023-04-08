@@ -1,3 +1,4 @@
+import 'package:eat/src/sign_in/view/sign_in_page.dart';
 import 'package:eat/src/sign_up/sign_up.dart';
 import 'package:eat/src/utils/constants/constants.dart';
 import 'package:eat/src/utils/enums/diet.dart';
@@ -8,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:go_router/go_router.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});
@@ -104,10 +106,14 @@ class _SignUpFormState extends State<SignUpForm> {
           return const Center(child: CircularProgressIndicator());
         }
         if (state.viewStatus == ViewStatus.success) {
-          return const Center(child: Text('Sign up completed'));
+          return const Center(
+            child: Text('Sign up completed'),
+          );
         }
         if (state.viewStatus == ViewStatus.failure) {
-          return const Center(child: Text('Sign up failed'));
+          return const Center(
+            child: Text('Sign up failed'),
+          );
         }
 
         return Center(
@@ -194,6 +200,16 @@ class _SignUpFormState extends State<SignUpForm> {
                       ));
                 },
                 child: const Text('Sign up'),
+              ),
+              const SizedBox(height: verticalGap),
+              Divider(color: Theme.of(context).primaryColor),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                      onPressed: () => context.go(SignInPage.path),
+                      child: const Text('Sign in')),
+                ],
               ),
             ],
           ),
