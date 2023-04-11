@@ -1,3 +1,5 @@
+import 'package:adaptive_breakpoints/adaptive_breakpoints.dart';
+import 'package:eat/src/utils/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class About extends StatelessWidget {
@@ -6,9 +8,25 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('About'),
+    double gutter = getBreakpointEntry(context).gutter;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(brand),
+        centerTitle: true,
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+      ),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(gutter),
+          child: Column(
+            children: const [
+              Text('This app helps to find nearby restaurants.'),
+              Text(
+                  'You first sign up providing your current location and then able to view restaurants within a configurable distance.'),
+              Text('You also can bookmark your favorite restaurants.'),
+            ],
+          ),
+        ),
       ),
     );
   }
