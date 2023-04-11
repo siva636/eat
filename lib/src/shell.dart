@@ -1,6 +1,6 @@
-import 'package:eat/src/account/account.dart';
+import 'package:eat/src/about/about.dart';
+import 'package:eat/src/dashboard/dashboard.dart';
 import 'package:eat/src/onboarding/splash.dart';
-import 'package:eat/src/search/Search.dart';
 import 'package:eat/src/sign_in/view/sign_in_page.dart';
 import 'package:eat/src/sign_up/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -25,12 +25,12 @@ class ScaffoldWithNavBar extends StatelessWidget {
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Icon(Icons.search),
-            label: 'Search',
+            icon: Icon(Icons.person),
+            label: 'Dashboard',
           ),
           NavigationDestination(
-            icon: Icon(Icons.person),
-            label: 'Account',
+            icon: Icon(Icons.info),
+            label: 'About',
           ),
         ],
         selectedIndex: _calculateSelectedIndex(context),
@@ -44,12 +44,12 @@ class ScaffoldWithNavBar extends StatelessWidget {
     if (location.startsWith(Splash.path)) {
       return 0;
     }
-    if (location.startsWith(Search.path)) {
-      return 1;
-    }
-    if (location.startsWith(Account.path) ||
+    if (location.startsWith(Dashboard.path) ||
         location.startsWith(SignInPage.path) ||
         location.startsWith(SignUpPage.path)) {
+      return 1;
+    }
+    if (location.startsWith(About.path)) {
       return 2;
     }
     return 0;
@@ -61,10 +61,10 @@ class ScaffoldWithNavBar extends StatelessWidget {
         context.go(Splash.path);
         break;
       case 1:
-        context.go(Search.path);
+        context.go(Dashboard.path);
         break;
       case 2:
-        context.go(Account.path);
+        context.go(About.path);
         break;
     }
   }

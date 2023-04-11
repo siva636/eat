@@ -1,4 +1,5 @@
-import 'package:eat/src/account/account.dart';
+import 'package:eat/src/about/about.dart';
+import 'package:eat/src/dashboard/dashboard.dart';
 import 'package:eat/src/auth/bloc/auth_bloc.dart';
 import 'package:eat/src/onboarding/splash.dart';
 import 'package:eat/src/search/Search.dart';
@@ -64,13 +65,19 @@ final GoRouter _router = GoRouter(
           },
         ),
         GoRoute(
+          path: About.path,
+          builder: (BuildContext context, GoRouterState state) {
+            return const About();
+          },
+        ),
+        GoRoute(
           path: SignInPage.path,
           builder: (BuildContext context, GoRouterState state) {
             return const SignInPage();
           },
         ),
         GoRoute(
-          path: Account.path,
+          path: Dashboard.path,
           redirect: (BuildContext context, GoRouterState state) {
             if (context.read<AuthBloc>().state.authenticationStatus !=
                 AuthenticationStatus.authenticated) {
@@ -80,7 +87,7 @@ final GoRouter _router = GoRouter(
             }
           },
           builder: (BuildContext context, GoRouterState state) {
-            return const Account();
+            return const Dashboard();
           },
         ),
       ],

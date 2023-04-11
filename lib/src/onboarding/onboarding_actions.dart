@@ -1,4 +1,4 @@
-import 'package:eat/src/account/account.dart';
+import 'package:eat/src/dashboard/dashboard.dart';
 import 'package:eat/src/utils/constants/constants.dart';
 import 'package:eat/src/search/Search.dart';
 import 'package:flutter/material.dart';
@@ -12,20 +12,11 @@ class OnboardingActions extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(height: contentPadding),
-        FilledButton(
-          style: FilledButton.styleFrom(
-            fixedSize: const Size(200, 50),
-          ),
-          onPressed: () => context.go(Search.path),
-          child: const Text('Search'),
-        ),
         const SizedBox(height: contentPadding),
         FilledButton(
-          style: FilledButton.styleFrom(
-            fixedSize: const Size(200, 50),
-          ),
-          onPressed: () => context.go(Account.path),
-          child: const Text('Account'),
+          style: FilledButton.styleFrom(),
+          onPressed: () => context.go(Dashboard.path),
+          child: const Text('Dashboard'),
         ),
         const SizedBox(height: contentPadding),
       ],
