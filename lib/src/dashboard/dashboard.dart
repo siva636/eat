@@ -1,6 +1,7 @@
 import 'package:adaptive_breakpoints/adaptive_breakpoints.dart';
 import 'package:eat/src/auth/bloc/auth_bloc.dart';
 import 'package:eat/src/onboarding/splash.dart';
+import 'package:eat/src/search/view/search.dart';
 import 'package:eat/src/utils/constants/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,9 @@ class Dashboard extends StatelessWidget {
                 Column(
                   children: [
                     FilledButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.go(SearchPage.path);
+                      },
                       child: const Text('Restaurants'),
                     ),
                     const SizedBox(height: verticalGap),

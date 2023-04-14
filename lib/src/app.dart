@@ -2,7 +2,7 @@ import 'package:eat/src/about/about.dart';
 import 'package:eat/src/dashboard/dashboard.dart';
 import 'package:eat/src/auth/bloc/auth_bloc.dart';
 import 'package:eat/src/onboarding/splash.dart';
-import 'package:eat/src/search/Search.dart';
+import 'package:eat/src/search/view/search.dart';
 import 'package:eat/src/shell.dart';
 import 'package:eat/src/sign_in/sign_in.dart';
 import 'package:eat/src/sign_up/sign_up.dart';
@@ -59,9 +59,9 @@ final GoRouter _router = GoRouter(
           },
         ),
         GoRoute(
-          path: Search.path,
+          path: SearchPage.path,
           builder: (BuildContext context, GoRouterState state) {
-            return const Search();
+            return const SearchPage();
           },
         ),
         GoRoute(
