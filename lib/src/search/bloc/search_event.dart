@@ -4,10 +4,19 @@ abstract class SearchEvent {
   const SearchEvent();
 }
 
-class ProfileFetchStarted extends SearchEvent {}
+class ProfileFetchStarted extends SearchEvent {
+  ProfileFetchStarted(this.uid);
+  final String uid;
+}
 
 class SearchStarted extends SearchEvent {}
 
-class DietInputChanged extends SearchEvent {}
+class IsVegetarianChanged extends SearchEvent {
+  IsVegetarianChanged(this.isVegetarian);
+  final bool isVegetarian;
+}
 
-class SearchRangeInputChanged extends SearchEvent {}
+class SearchRangeChanged extends SearchEvent {
+  SearchRangeChanged(this.searchRange);
+  final double searchRange;
+}

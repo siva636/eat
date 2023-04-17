@@ -4,45 +4,45 @@ part of 'search_bloc.dart';
 class SearchState {
   const SearchState._({
     required this.viewStatus,
+    required this.profile,
     required this.searchResults,
-    // required this.searchFiltersUi,
-    // required this.dietInput,
-    // required this.searchRangeInput,
-    // required this.profile,
+    required this.showSearchFiltersUi,
+    required this.isVegetarian,
+    required this.searchRange,
   });
 
   SearchState.initial()
       : this._(
           viewStatus: ViewStatus.initial,
           searchResults: [],
-          // searchFiltersUi: true,
-          // dietInput: DietInput.pure(),
-          // searchRangeInput: SearchRangeInput(),
-          // profile: Profile(),
+          showSearchFiltersUi: true,
+          isVegetarian: false,
+          searchRange: .5,
+          profile: null,
         );
 
   final ViewStatus viewStatus;
-  final dynamic searchResults;
-  // final bool searchFiltersUi;
-  // final FormzInput dietInput;
-  // final double searchRangeInput;
-  // final dynamic profile;
+  final ProfileForSearch? profile;
+  final List<NearbyRestaurant> searchResults;
+  final bool showSearchFiltersUi;
+  final bool isVegetarian;
+  final double searchRange;
 
   SearchState copyWith({
     ViewStatus? viewStatus,
-    dynamic searchResults,
-    // bool? searchFiltersUi,
-    // FormzInput? dietInput,
-    // double? searchRangeInput,
-    // dynamic profile,
+    ProfileForSearch? profile,
+    List<NearbyRestaurant>? searchResults,
+    bool? showSearchFiltersUi,
+    bool? isVegetarian,
+    double? searchRange,
   }) {
     return SearchState._(
       viewStatus: viewStatus ?? this.viewStatus,
+      profile: profile ?? this.profile,
       searchResults: searchResults ?? this.searchResults,
-      // searchFiltersUi: searchFiltersUi ?? this.searchFiltersUi,
-      // dietInput: dietInput ?? this.dietInput,
-      // searchRangeInput: searchRangeInput ?? this.searchRangeInput,
-      // profile: profile ?? this.profile,
+      showSearchFiltersUi: showSearchFiltersUi ?? this.showSearchFiltersUi,
+      isVegetarian: isVegetarian ?? this.isVegetarian,
+      searchRange: searchRange ?? this.searchRange,
     );
   }
 }

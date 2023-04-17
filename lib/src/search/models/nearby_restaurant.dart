@@ -1,3 +1,5 @@
+// TODO: move this to global scope?
+
 import 'package:meta/meta.dart';
 
 @immutable
