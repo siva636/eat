@@ -113,7 +113,7 @@ class _SignInFormState extends State<SignInForm> {
                 child: const Text('Sign in'),
               ),
               const SizedBox(height: verticalGap),
-              Divider(color: Theme.of(context).primaryColor),
+              const Divider(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [

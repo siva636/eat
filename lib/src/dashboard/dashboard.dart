@@ -40,7 +40,7 @@ class Dashboard extends StatelessWidget {
                       child: const Text('Restaurants'),
                     ),
                     const SizedBox(height: verticalGap),
-                    Divider(color: Theme.of(context).primaryColor),
+                    const Divider(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [

@@ -173,7 +173,10 @@ class _SignUpFormState extends State<SignUpForm> {
                     : Icon(Icons.warning,
                         color: Theme.of(context).colorScheme.error),
                 value: state.saveLocationPreference,
-                shape: const OutlineInputBorder(),
+                shape: OutlineInputBorder(
+                  borderSide:
+                      BorderSide(color: Theme.of(context).colorScheme.outline),
+                ),
                 onChanged: (value) {
                   context
                       .read<SignUpBloc>()
@@ -202,7 +205,7 @@ class _SignUpFormState extends State<SignUpForm> {
                 child: const Text('Sign up'),
               ),
               const SizedBox(height: verticalGap),
-              Divider(color: Theme.of(context).primaryColor),
+              const Divider(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
