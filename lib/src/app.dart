@@ -1,5 +1,5 @@
 import 'package:eat/src/about/about.dart';
-import 'package:eat/src/dashboard/dashboard.dart';
+import 'package:eat/src/dashboard/view/dashboard.dart';
 import 'package:eat/src/auth/bloc/auth_bloc.dart';
 import 'package:eat/src/onboarding/splash.dart';
 import 'package:eat/src/search/view/search.dart';

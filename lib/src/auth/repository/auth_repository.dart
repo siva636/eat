@@ -16,7 +16,11 @@ class AuthRepository {
     });
   }
 
-  signOut() {
-    auth.signOut();
+  signOut() async {
+    await auth.signOut();
+  }
+
+  delete() async {
+    await auth.currentUser!.delete();
   }
 }

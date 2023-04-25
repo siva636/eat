@@ -1,4 +1,4 @@
-import 'package:eat/src/dashboard/dashboard.dart';
+import 'package:eat/src/dashboard/view/dashboard.dart';
 import 'package:eat/src/utils/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

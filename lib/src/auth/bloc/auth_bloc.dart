@@ -13,6 +13,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(this.authRepository) : super(const AuthState.initial()) {
     on<AuthStateChanged>(_onAuthStateChanged);
     on<SignOut>(_onSignOut);
+    on<Delete>(_onDelete);
 
     authRepository.authStateChanges().listen((MyUser? myUser) async {
       if (myUser != null) {
@@ -36,6 +37,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   _onSignOut(event, emit) async {
     try {
       await authRepository.signOut();
+      emit(const AuthState.unauthenticated());
+    } catch (e) {
+      emit(const AuthState.error());
+    }
+  }
+
+  _onDelete(event, emit) async {
+    try {
+      await authRepository.delete();
       emit(const AuthState.unauthenticated());
     } catch (e) {
       emit(const AuthState.error());
