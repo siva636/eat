@@ -26,10 +26,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -58,5 +55,16 @@ class DefaultFirebaseOptions {
     messagingSenderId: '376225930229',
     projectId: 'pexels-view',
     storageBucket: 'pexels-view.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyA3Bc6mlhnPAzcz1rly5bbnGYOxNKYtoBM',
+    appId: '1:376225930229:ios:0c746b2fa262ecce5f1ebc',
+    messagingSenderId: '376225930229',
+    projectId: 'pexels-view',
+    storageBucket: 'pexels-view.appspot.com',
+    androidClientId: '376225930229-30avdvkkea7g1l7e3j22924ps7cdt5bg.apps.googleusercontent.com',
+    iosClientId: '376225930229-npiarmbhvlqectgajhgqgsj989qvodts.apps.googleusercontent.com',
+    iosBundleId: 'link.gamecafe.eat',
   );
 }
